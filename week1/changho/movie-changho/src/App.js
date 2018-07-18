@@ -22,17 +22,21 @@ const movies = [
 ]
 
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <h1>this is the react</h1>
-          {movies.map((movie) => (
-            <Movie key={movie.title} title={movie.title} image={movie.image} />
-          ))}
-      </div>
-    );
-  }
+// class App extends Component {
+//   render() {
+    
+//   }
+// }
+
+const App = () => {
+  return (
+    <div className="App">
+      <h1>this is the react</h1>
+        {movies.map((movie) => (
+          <Movie key={movie.title} title={movie.title} image={movie.image} />
+        ))} 
+    </div>
+  );
 }
 
 export default App;
