@@ -1,0 +1,12 @@
+/* default font, background-color, height */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+  background-color: #EFF3F7;
+  height: 100%;
+}
+
+html, #root {
+  height: 100%;
+}
