@@ -45,23 +45,28 @@ class App extends Component {
   }
 
   callApi() {
-    return Axios.get(`https://yts.am/api/v2/list_movies.json?sort_by=rating`)
+    return Axios.get(`https://yts.am/api/v2/list_movies.json?sort_by=download_count`)
     .then(res =>  res.data.data.movies)
     .catch(err => console.log(err));
   }
 
   renderMovie () {
-    const movies = this.state.movies.map((movie) => (
-      // 인덱스를 사용하면 퍼포 측면에서 조금 느리다
-      <Movie key={movie.id} title={movie.title} image={movie.large_cover_image} />
-    ))
+    const movies = this.state.movies.map((movie) => {
+      console.log(movie)
+      return <Movie key={movie.id} 
+      genres={movie.genres}
+      title={movie.title_english} 
+      synopsis={movie.synopsis}
+      image={movie.medium_cover_image} />
+    }    // 인덱스를 사용하면 퍼포 측면에서 조금 느리다
+  )
     return movies;
   }
   render() {
     console.log('render')
     return (
-      <div className="App">
-        <h1>this is the react</h1>
+      <div className={this.state.movies ? 'App' : 'App__loading'}>
+        {/* <h1>this is the react</h1> */}
           {/* {this.state.movies.map((movie) => (
             <Movie key={movie.title} title={movie.title} image={movie.image} />
           ))} */}
