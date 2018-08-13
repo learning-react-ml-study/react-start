@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types'
-
+import './MoviePoster.css'
 
 class MoviePoster extends Component {
 	
@@ -12,9 +12,7 @@ class MoviePoster extends Component {
 	render() {
 		
 		return (
-			<div>
-				<img src={this.props.image} alt={this.props.title} />
-			</div>
+				<img className='movie__poster' src={this.props.image} alt={this.props.title} />
 		);
 	}
 }
